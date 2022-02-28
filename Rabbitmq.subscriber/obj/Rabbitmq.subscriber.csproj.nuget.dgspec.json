@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.publisher\\Rabbitmq.publisher.csproj": {}
+    "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.subscriber\\Rabbitmq.subscriber.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.publisher\\Rabbitmq.publisher.csproj": {
+    "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.subscriber\\Rabbitmq.subscriber.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.publisher\\Rabbitmq.publisher.csproj",
-        "projectName": "Rabbitmq.publisher",
-        "projectPath": "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.publisher\\Rabbitmq.publisher.csproj",
+        "projectUniqueName": "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.subscriber\\Rabbitmq.subscriber.csproj",
+        "projectName": "Rabbitmq.subscriber",
+        "projectPath": "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.subscriber\\Rabbitmq.subscriber.csproj",
         "packagesPath": "C:\\Users\\ehlul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.publisher\\obj\\",
+        "outputPath": "C:\\Users\\ehlul\\OneDrive\\Belgeler\\GitHub\\RabbitmqProject\\Rabbitmq.subscriber\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

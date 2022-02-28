@@ -6,5 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = Rabbitmq.publisher
-build_property.ProjectDir = C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\Rabbitmq.publisher\
+build_property.RootNamespace = Rabbitmq.subscriber
+build_property.ProjectDir = C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\Rabbitmq.subscriber\
