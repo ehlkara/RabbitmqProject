@@ -7,8 +7,8 @@ namespace RabbitMQWeb.Watermark.Services
     public class RabbitMQClientService : IDisposable
     {
         private readonly ConnectionFactory _connectionFactory;
-        private readonly IConnection _connection;
-        private readonly IModel _channel;
+        private IConnection _connection;
+        private IModel _channel;
         public static string ExchangeName = "ImageDirectExchange";
         public static string RoutingWatermark = "watermark-route-image";
         public static string QueueName = "queue-watermark-image";
@@ -19,14 +19,15 @@ namespace RabbitMQWeb.Watermark.Services
         {
             _connectionFactory = connectionFactory;
             _logger = logger;
-            Connect(_connection, _channel);
+
         }
 
-        public IModel Connect(IConnection _connection,IModel _channel)
+        public IModel Connect()
         {
             _connection = _connectionFactory.CreateConnection();
-            
-            if(_channel is { IsOpen:true})
+
+
+            if (_channel is { IsOpen: true })
             {
                 return _channel;
             }
@@ -37,11 +38,14 @@ namespace RabbitMQWeb.Watermark.Services
 
             _channel.QueueDeclare(QueueName, true, false, false, null);
 
+
             _channel.QueueBind(exchange: ExchangeName, queue: QueueName, routingKey: RoutingWatermark);
 
             _logger.LogInformation("Connected with rabbitmq ...");
 
+
             return _channel;
+
         }
 
         public void Dispose()
@@ -52,7 +56,8 @@ namespace RabbitMQWeb.Watermark.Services
             _connection?.Close();
             _connection?.Dispose();
 
-            _logger.LogInformation("Disconnected with rabbitmq ...");
+            _logger.LogInformation("Disconnected with rabbitmq...");
+
         }
     }
 }
