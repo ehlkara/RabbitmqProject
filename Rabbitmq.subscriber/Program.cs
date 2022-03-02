@@ -1,6 +1,7 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -17,6 +18,7 @@ namespace Rabbitmq.subscriber
             using var connection = factory.CreateConnection();
 
             var channel = connection.CreateModel();
+            channel.ExchangeDeclare("header-exchange", durable: true, type: ExchangeType.Headers);
 
             //channel.QueueDeclare("hello-queue", true, false, false);
 
@@ -36,9 +38,16 @@ namespace Rabbitmq.subscriber
 
             var queueName = channel.QueueDeclare().QueueName;
 
-            var routeKey = "Info.#";
+            //var routeKey = "Info.#";
 
-            channel.QueueBind(queueName, "logs-topic", routeKey);
+            Dictionary<string,object> headers = new Dictionary<string, object>();
+
+            headers.Add("format", "pdf");
+            headers.Add("shape", "a4");
+            headers.Add("x-match", "all");
+
+            //channel.QueueBind(queueName, "logs-topic", routeKey);
+            channel.QueueBind(queueName, "header-exchange", String.Empty, headers);
 
             channel.BasicConsume(queueName,false,consumer);
 
