@@ -16,3 +16,5 @@ C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\Rabbitmq.publisher\obj\D
 C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\Rabbitmq.publisher\obj\Debug\net5.0\Rabbitmq.publisher.pdb
 C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\Rabbitmq.publisher\obj\Debug\net5.0\Rabbitmq.publisher.genruntimeconfig.cache
 C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\Rabbitmq.publisher\obj\Debug\net5.0\ref\Rabbitmq.publisher.dll
+C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\Rabbitmq.publisher\bin\Debug\net5.0\Shared.dll
+C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\Rabbitmq.publisher\bin\Debug\net5.0\Shared.pdb
