@@ -35,6 +35,7 @@ namespace RabbitMQWeb.Watermark.BackgroundServices
         }
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
+
             var consumer = new AsyncEventingBasicConsumer(_channel);
 
             _channel.BasicConsume(RabbitMQClientService.QueueName, false, consumer);
@@ -46,31 +47,34 @@ namespace RabbitMQWeb.Watermark.BackgroundServices
 
         private Task Consumer_Received(object sender, BasicDeliverEventArgs @event)
         {
+            Task.Delay(10000).Wait();
+
             try
             {
                 var productImageCreatedEvent = JsonSerializer.Deserialize<productImageCreatedEvent>(Encoding.UTF8.GetString(@event.Body.ToArray()));
 
                 var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images", productImageCreatedEvent.ImageName);
 
-                var webName = "www.ehlkara.com";
+                var siteName = "wwww.ehlkara.com";
 
                 using var img = Image.FromFile(path);
 
                 using var graphic = Graphics.FromImage(img);
 
-                var font = new Font(FontFamily.GenericMonospace, 32, FontStyle.Bold, GraphicsUnit.Pixel);
+                var font = new Font(FontFamily.GenericMonospace, 40, FontStyle.Bold, GraphicsUnit.Pixel);
 
-                var textSize = graphic.MeasureString(webName, font);
+                var textSize = graphic.MeasureString(siteName, font);
 
                 var color = Color.FromArgb(128, 255, 255, 255);
-
                 var brush = new SolidBrush(color);
 
                 var position = new Point(img.Width - ((int)textSize.Width + 30), img.Height - ((int)textSize.Height + 30));
 
-                graphic.DrawString(webName, font, brush, position);
 
-                img.Save("wwwroot/images/watermarks/" + productImageCreatedEvent.ImageName);
+                graphic.DrawString(siteName, font, brush, position);
+
+                img.Save("wwwroot/Images/watermarks/" + productImageCreatedEvent.ImageName);
+
 
                 img.Dispose();
                 graphic.Dispose();
@@ -80,10 +84,11 @@ namespace RabbitMQWeb.Watermark.BackgroundServices
             catch (Exception ex)
             {
 
-                throw ex;
+                _logger.LogError(ex.Message);
             }
 
             return Task.CompletedTask;
+
         }
 
         public override Task StopAsync(CancellationToken cancellationToken)
