@@ -151,3 +151,4 @@ C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\RabbitMQWeb.ExcelCreate\
 C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\RabbitMQWeb.ExcelCreate\obj\Debug\net5.0\RabbitMQWeb.ExcelCreate.genruntimeconfig.cache
 C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\RabbitMQWeb.ExcelCreate\obj\Debug\net5.0\ref\RabbitMQWeb.ExcelCreate.dll
 C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\RabbitMQWeb.ExcelCreate\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\ehlul\OneDrive\Belgeler\GitHub\RabbitmqProject\RabbitMQWeb.ExcelCreate\obj\Debug\net5.0\Razor\Views\Product\Files.cshtml.g.cs
