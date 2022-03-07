@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,9 +9,6 @@ using RabbitMQ.Client;
 using RabbitMQWeb.ExcelCreate.Models;
 using RabbitMQWeb.ExcelCreate.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RabbitMQWeb.ExcelCreate
 {
@@ -29,6 +25,8 @@ namespace RabbitMQWeb.ExcelCreate
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(sp => new ConnectionFactory() { Uri = new Uri(Configuration.GetConnectionString("RabbitMQ")), DispatchConsumersAsync = true });
+
+            services.AddSingleton<RabbitMQPublisher>();
 
             services.AddSingleton<RabbitMQClientService>();
 
