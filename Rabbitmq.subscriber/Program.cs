@@ -59,7 +59,7 @@ namespace Rabbitmq.subscriber
             {
                 var message = Encoding.UTF8.GetString(e.Body.ToArray());
 
-                Product product = JsonSerializer.Deserialize<Product>(message);
+                Products product = JsonSerializer.Deserialize<Products>(message);
 
                 Thread.Sleep(1500);
                 Console.WriteLine($"Incoming message: {product.Id }-{product.Name}-{product.Price}-{product.Stock}");

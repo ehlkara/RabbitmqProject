@@ -39,7 +39,7 @@ namespace Rabbitmq.publisher
             properties.Headers = headers;
             properties.Persistent = true;
 
-            var product = new Product { Id = 1, Name = "Pen", Price = 100, Stock = 10 };
+            var product = new Products { Id = 1, Name = "Pen", Price = 100, Stock = 10 };
 
             var productJsonString = JsonSerializer.Serialize(product);
 
