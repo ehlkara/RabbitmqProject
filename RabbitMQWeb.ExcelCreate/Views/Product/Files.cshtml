@@ -3,6 +3,25 @@
     ViewData["Title"] = "Files";
 }
 @model List<UserFile>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var hasStartedCreatingExcel = '@TempData["StartCreatingExcel"]';
+
+            if(hasStartedCreatingExcel) {
+                
+						Swal.fire({
+						position: 'top-end',
+						icon: 'success',
+						title: 'Excel creation process has started. You will receive notification when finished.',
+						showConfirmButton: false,
+                        timer:2500
+						});
+            }
+        });
+    </script>
+}
 <h1>Files</h1>
 <table class="table table-striped">
     <thead>
